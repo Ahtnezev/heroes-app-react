@@ -6,8 +6,6 @@ import { HeroesApp } from './HeroesApp'
 
 createRoot(document.getElementById('root')!).render(
    <StrictMode>
-      <div className='bg-gradient'>
-         <HeroesApp />
-      </div>
+      <HeroesApp />
    </StrictMode>,
 )
