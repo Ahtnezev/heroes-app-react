@@ -1,0 +1,34 @@
+import { ChevronLeft, MoreHorizontal, ChevronRight } from "lucide-react"
+import { Button } from "../ui/button"
+
+export const CustomPagination = () => {
+
+        
+
+    return (
+        <div className="flex items-center justify-center space-x-2">
+            <Button variant="outline" size="sm" disabled>
+                <ChevronLeft className="h-4 w-4" />
+                Previous
+            </Button>
+
+            <Button variant="default" size="sm">
+                1
+            </Button>
+            <Button variant="outline" size="sm">
+                2
+            </Button>
+            <Button variant="outline" size="sm">
+                3
+            </Button>
+            <Button variant="ghost" size="sm" disabled>
+                <MoreHorizontal className="h-4 w-4" />
+            </Button>
+
+            <Button variant="outline" size="sm">
+                Next
+                <ChevronRight className="h-4 w-4" />
+            </Button>
+        </div>
+    )
+}
