@@ -69,7 +69,7 @@ export const HomePage = () => {
         </Tabs>
 
         {/* Pagination */}
-        <CustomPagination />
+        <CustomPagination totalPage={8} />
       </>
     </>
   )
