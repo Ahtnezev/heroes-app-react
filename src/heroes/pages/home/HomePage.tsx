@@ -3,18 +3,31 @@ import { CustomJumbotron } from "@/components/custom/CustomJumbotron"
 import { HeroStats } from "@/heroes/components/HeroStats"
 import { SearchControl } from "../search/ui/SearchControl"
 import { HeroGrid } from "@/heroes/components/HeroGrid"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { CustomPagination } from "@/components/custom/CustomPagination"
 import { CustomBreadcrumbs } from "@/components/custom/CustomBreadcrumbs"
+import { getHeroesByPageAction } from "@/heroes/actions/get-heroes-by-page.action"
+import { useQueries } from "@tanstack/react-query"
 
 export const HomePage = () => {
-
   const [activeTab, setActiveTab] = useState<
     'all' | 'favorites' | 'heroes' | 'villains'
   >('all');
 
+//   useEffect(() => {
+//    getHeroesByPageAction().then()
+//   }, []);
 
-
+   const { data } = useQueries({
+      queries: [
+         {
+            queryKey: ['heroes'],
+            queryFn: () => getHeroesByPageAction(),
+            staleTime: 1000 * 60 * 5, // 5 minutes
+         }
+      ]
+   })
+  
   return (
     <>
       <>
