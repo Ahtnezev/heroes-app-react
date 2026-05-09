@@ -31,7 +31,7 @@ export const HomePage = () => {
   }, [activeTab]);
 
   const { data: heroesResponse } = useQuery({
-    queryKey: ['heroes'],
+    queryKey: ['heroes', { page, limit }], // refresh data, { ... }
     queryFn: () => getHeroesByPageAction(+page, +limit),
     staleTime: 1000 * 60 * 5, // 5 minutes
   });
@@ -107,7 +107,7 @@ export const HomePage = () => {
         </Tabs>
 
         {/* Pagination */}
-        <CustomPagination totalPage={8} />
+        <CustomPagination totalPage={heroesResponse?.pages ?? 1}  />
       </>
     </>
   )
