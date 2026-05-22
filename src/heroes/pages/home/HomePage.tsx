@@ -8,7 +8,7 @@ import { CustomBreadcrumbs } from "@/components/custom/CustomBreadcrumbs"
 
 import { HeroStats } from "@/heroes/components/HeroStats"
 import { HeroGrid } from "@/heroes/components/HeroGrid"
-import { SearchControl } from "../search/ui/SearchControl"
+import { SearchControls } from "../search/ui/SearchControls"
 import { useHeroSummary } from "@/heroes/hooks/useHeroSummary"
 import { usePaginatedHero } from "@/heroes/hooks/usePaginatedHero"
 import { FavoriteHeroContext } from "@/heroes/context/FavoriteHeroContext"
@@ -50,7 +50,7 @@ export const HomePage = () => {
         <HeroStats />
 
         {/* Controls */}
-        <SearchControl />
+        <SearchControls />
 
         {/* Tabs */}
         <Tabs value={selectedTab} className="mb-8">
